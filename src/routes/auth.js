@@ -51,7 +51,8 @@ router.post('/wallet', async (req, res) => {
     user = new User({
       walletAddress: walletAddress.toLowerCase(),
       referralCode: newReferralCode,
-      referredBy
+      referredBy,
+      registeredTimestamp: Math.floor(Date.now() / 1000)
     });
     
     await user.save();

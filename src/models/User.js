@@ -21,6 +21,10 @@ const userSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now
+  },
+  registeredTimestamp: {
+    type: Number,
+    default: () => Math.floor(Date.now() / 1000)
   }
 });
 
